@@ -1,0 +1,251 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Untel23'game(rkrk#5875)", "DarkTheme")
+local Tab = Window:NewTab("gun")
+local Section = Tab:NewSection("gun")
+Section:NewToggle("auto fire gun", "not you", function(state)
+    if state then
+        _G.pw = true
+while _G.pw == true do wait()
+    pcall(function()
+for i, v in pairs(game.Players:GetPlayers()) do
+    if v ~= game.Players.LocalPlayer then
+        pcall(function()
+local args = {
+    [1] = v.Character.Humanoid
+}
+
+v.Backpack.pistol.RemoteEvent:FireServer(unpack(args))
+end)
+pcall(function()
+    local args = {
+    [1] = v.Character.Humanoid
+}
+
+v.Character.pistol.RemoteEvent:FireServer(unpack(args))
+    
+end)
+end
+end
+end)
+end
+    else
+        _G.pw = false
+    end
+end)
+Section:NewToggle("get gun", "", function(state)
+    if state then
+        _G.lal = true
+        for i, v in pairs(game.Workspace:GetChildren()) do
+if v.Name == 'Part' then
+for a, b in pairs(v:GetChildren()) do
+if b.Name == 'Part' then
+    if b.CFrame == CFrame.new(-75, 12.1000004, 275, 0, 0, 1, 1, 0, 0, 0, 1, 0) then
+        while _G.lal == true do wait()
+            pcall(function()
+b.Parent.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+b.Parent.Size = Vector3.new(12, 12, 12)
+end)
+end
+end
+end
+end
+end
+end
+    else
+        _G.lal = false
+        wait(2)
+        for i, v in pairs(game.Workspace:GetChildren()) do
+if v.Name == 'Part' then
+for a, b in pairs(v:GetChildren()) do
+if b.Name == 'Part' then
+    if b.CFrame == CFrame.new(-75, 12.1000004, 275, 0, 0, 1, 1, 0, 0, 0, 1, 0) then
+b.Parent.CFrame = CFrame.new(-75, 12.5, 275, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+b.Parent.Size = Vector3.new(12, 12, 1)
+end
+end
+end
+end
+end
+end
+end)
+local Tab = Window:NewTab("car")
+local Section = Tab:NewSection("car")
+Section:NewSlider("car speed", "1~300", 300, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    for i, v in pairs(game.Workspace:GetChildren()) do
+if v.Name == 'Model' then
+    for a, b in pairs(v:GetChildren()) do
+if b.Name == 'Model' then
+    for c, d in pairs(b:GetChildren()) do
+if d.Name == "Configurations" then
+    for z, x in pairs(d:GetChildren()) do
+        if x.Name == 'Speed' then
+            x.Value = s
+        end
+    end
+end
+end
+end
+end
+end
+end
+end)
+Section:NewSlider("TurnSpeed", "0.5~15", 15, 0.5, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    for i, v in pairs(game.Workspace:GetChildren()) do
+if v.Name == 'Model' then
+    for a, b in pairs(v:GetChildren()) do
+if b.Name == 'Model' then
+    for c, d in pairs(b:GetChildren()) do
+if d.Name == "Configurations" then
+    for z, x in pairs(d:GetChildren()) do
+        if x.Name == 'TurnSpeed' then
+            x.Value = s
+        end
+    end
+end
+end
+end
+end
+end
+end
+end)
+Section:NewToggle("anti void", "anti void", function(state)
+    if state then
+        local p12art = Instance.new("Part",workspace)
+p12art.CFrame = CFrame.new(0,9.49,0)
+p12art.Anchored = true
+p12art.Name = 'antivoid'
+p12art.Size = Vector3.new(3500,1,3500)
+p12art.Transparency = 0.5
+    else
+        workspace.antivoid:Destroy()
+        workspace.antivoid:Destroy()
+        workspace.antivoid:Destroy()
+    end
+end)
+Section:NewToggle("car fly", "part fly", function(state)
+    if state then
+        _G.qwe1 = true
+        while _G.qwe1 == true do 
+local part = Instance.new("Part", workspace)
+local one = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+part.CFrame = one * CFrame.new(0,-5,0) * CFrame.Angles(0,0,0)
+part.Anchored = true
+part.Name = 'flypart'
+part.Size = Vector3.new(35,1,35)
+part.Transparency = 0.5
+wait()
+pcall(function()
+workspace.flypart:Destroy()
+workspace.flypart:Destroy()
+end)
+end
+    else
+        _G.qwe1 = false
+    end
+end)
+Section:NewSlider("Height", "Height", 150, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    _G.wali = s
+end)
+Section:NewButton("Height", "Height", function()
+    for i, v in pairs(game.Workspace:GetChildren()) do
+if v.Name == 'Model' then
+    for a, b in pairs(v:GetChildren()) do
+if b.Name == 'Model' then
+    for c, d in pairs(b:GetChildren()) do
+if d.Name == "Configurations" then
+    for z, x in pairs(d:GetChildren()) do
+        if x.Name == 'Height' then
+            x.Value = _G.wali
+        end
+    end
+end
+end
+end
+end
+end
+end
+end)
+Section:NewSlider("Bounce", "Bounce", 5000, 1, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    for i, v in pairs(game.Workspace:GetChildren()) do
+if v.Name == 'Model' then
+    for a, b in pairs(v:GetChildren()) do
+if b.Name == 'Model' then
+    for c, d in pairs(b:GetChildren()) do
+if d.Name == "Configurations" then
+    for z, x in pairs(d:GetChildren()) do
+        if x.Name == 'Bounce' then
+            x.Value = s
+        end
+    end
+end
+end
+end
+end
+end
+end
+end)
+local Tab = Window:NewTab("etc")
+local Section = Tab:NewSection("bommbox")
+Section:NewToggle("bommbox mute", "ToggleInfo", function(state)
+    if state then
+        _G.mam = true
+        while _G.mam == true do wait()
+        for i,v in pairs(game.Players:GetPlayers()) do
+						if v.Character then
+							if v.Character:FindFirstChild("radio") then 
+								if v.Character:FindFirstChild("radio"):FindFirstChild("Handle") then
+									v.Character:FindFirstChild("radio").Handle.Sound.Volume = 0
+								end
+							end
+							if v.Character:FindFirstChild("radio") then 
+								if v.Character:FindFirstChild("radio"):FindFirstChild("Handle") then
+									v.Character:FindFirstChild("radio").Handle.Sound.Volume = 0
+								end
+							end
+						end
+        end
+				end
+    else
+        _G.mam = false
+        wait(1)
+        for i,v in pairs(game.Players:GetPlayers()) do
+						if v.Character then
+							if v.Character:FindFirstChild("radio") then 
+								if v.Character:FindFirstChild("radio"):FindFirstChild("Handle") then
+									v.Character:FindFirstChild("radio").Handle.Sound.Volume = 1
+								end
+							end
+							if v.Character:FindFirstChild("radio") then 
+								if v.Character:FindFirstChild("radio"):FindFirstChild("Handle") then
+									v.Character:FindFirstChild("radio").Handle.Sound.Volume = 1
+								end
+							end
+						end
+        end
+    end
+end)
+Section:NewButton("all button click", "", function()
+    local ppap = game.Workspace:GetDescendants()
+for index, descendant in pairs(ppap) do
+	if descendant:IsA("ClickDetector") then
+		fireclickdetector(descendant, 1)
+	end
+end
+end)
+Section:NewLabel("fling")
+Section:NewToggle("anti fling", "", function(state)
+    if state then
+        _G.wawawa = true
+while _G.wawawa == true do wait()
+for i, v in pairs(game.Players:GetPlayers()) do
+    if v ~= game.Players.LocalPlayer then
+        pcall(function()
+        v.Character.HumanoidRootPart.CanCollide = false
+        end)
+    end
+end
+end
+    else
+        _G.wawawa = false
+    end
+end)
